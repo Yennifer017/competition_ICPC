@@ -21,9 +21,15 @@ public class Anagrama {
     }
     
     private boolean isAnagrama(String firstWord, String secondWord){
+        firstWord = firstWord.replace(" ", "");
+        secondWord = secondWord.replace(" ", "");
         if(firstWord.length() != secondWord.length()){
             return false;
         }
+        
+        firstWord = firstWord.toLowerCase();
+        secondWord = secondWord.toLowerCase();
+        
         HashMap<Character, Integer> dictionary = new HashMap<>();
         //first word
         for(int i = 0; i < firstWord.length(); i++){
